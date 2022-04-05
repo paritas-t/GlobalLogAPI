@@ -1,0 +1,117 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace GlobalLogAPI.Models.DB
+{
+    public partial class TreqServiceHi
+    {
+        public int NItem { get; set; }
+        public string SReqServiceId { get; set; } = null!;
+        public DateTime? Dupdate { get; set; }
+        public string? Swwcode { get; set; }
+        public string? Scustcode { get; set; }
+        public int? SServiceType { get; set; }
+        public string? SAns1 { get; set; }
+        public DateTime? DAns21 { get; set; }
+        public DateTime? DAns22 { get; set; }
+        public string? SAns23 { get; set; }
+        public string? SAns3 { get; set; }
+        public decimal? SAns41 { get; set; }
+        public decimal? SAns42 { get; set; }
+        public string? SAns51 { get; set; }
+        public string? SAns52 { get; set; }
+        public decimal? SAns53 { get; set; }
+        public string? SAns54 { get; set; }
+        public int? SAns55 { get; set; }
+        public decimal? SAns56 { get; set; }
+        public string? SAns6 { get; set; }
+        public string? SAns7 { get; set; }
+        public string? SAns8 { get; set; }
+        public string? SAns91 { get; set; }
+        public string? SAns92 { get; set; }
+        public DateTime? SAns93 { get; set; }
+        public DateTime? SAns94 { get; set; }
+        public string? SAns95 { get; set; }
+        public string? SAns96 { get; set; }
+        public string? SAns97 { get; set; }
+        public string? SAns98 { get; set; }
+        public string? SAns101 { get; set; }
+        public string? SAns102 { get; set; }
+        public string? SAns103 { get; set; }
+        public string? SAns104 { get; set; }
+        public string? SAns105 { get; set; }
+        public string? SAns106 { get; set; }
+        public string? SAns111 { get; set; }
+        public string? SAns112 { get; set; }
+        public string? SAns113 { get; set; }
+        public string? SAns114 { get; set; }
+        public string? SAns12 { get; set; }
+        public string? SAns13 { get; set; }
+        public decimal? SAns141 { get; set; }
+        public decimal? SAns142 { get; set; }
+        public string? SAns151 { get; set; }
+        public string? SAns152 { get; set; }
+        public string? SAns153 { get; set; }
+        public string? SAns154 { get; set; }
+        public string? SAns155 { get; set; }
+        public DateTime? SAns156 { get; set; }
+        public string? SAns1Old { get; set; }
+        public DateTime? DAns21Old { get; set; }
+        public DateTime? DAns22Old { get; set; }
+        public string? SAns23Old { get; set; }
+        public string? SAns3Old { get; set; }
+        public decimal? SAns41Old { get; set; }
+        public decimal? SAns42Old { get; set; }
+        public string? SAns51Old { get; set; }
+        public string? SAns52Old { get; set; }
+        public decimal? SAns53Old { get; set; }
+        public string? SAns54Old { get; set; }
+        public int? SAns55Old { get; set; }
+        public decimal? SAns56Old { get; set; }
+        public string? SAns6Old { get; set; }
+        public string? SAns7Old { get; set; }
+        public string? SAns8Old { get; set; }
+        public string? SAns91Old { get; set; }
+        public string? SAns92Old { get; set; }
+        public DateTime? SAns93Old { get; set; }
+        public DateTime? SAns94Old { get; set; }
+        public string? SAns95Old { get; set; }
+        public string? SAns96Old { get; set; }
+        public string? SAns97Old { get; set; }
+        public string? SAns98Old { get; set; }
+        public string? SAns101Old { get; set; }
+        public string? SAns102Old { get; set; }
+        public string? SAns103Old { get; set; }
+        public string? SAns104Old { get; set; }
+        public string? SAns105Old { get; set; }
+        public string? SAns106Old { get; set; }
+        public string? SAns111Old { get; set; }
+        public string? SAns112Old { get; set; }
+        public string? SAns113Old { get; set; }
+        public string? SAns114Old { get; set; }
+        public string? SAns12Old { get; set; }
+        public string? SAns13Old { get; set; }
+        public decimal? SAns141Old { get; set; }
+        public decimal? SAns142Old { get; set; }
+        public string? SAns151Old { get; set; }
+        public string? SAns152Old { get; set; }
+        public string? SAns153Old { get; set; }
+        public string? SAns154Old { get; set; }
+        public string? SAns155Old { get; set; }
+        public DateTime? SAns156Old { get; set; }
+        public string? SAns181 { get; set; }
+        public string? SAns181Old { get; set; }
+        public string? SAns99 { get; set; }
+        public string? SAns910 { get; set; }
+        public string? SAns9Usertype { get; set; }
+        public string? SAns99Old { get; set; }
+        public string? SAns910Old { get; set; }
+        public string? SAns9UsertypeOld { get; set; }
+        public string? SAns161 { get; set; }
+        public string? SAns161Old { get; set; }
+        public string? SAns10Village { get; set; }
+        public string? SAns10VillageOld { get; set; }
+        public string? CcuststartOld { get; set; }
+        public string? CcuststartNew { get; set; }
+    }
+}
