@@ -2,19 +2,19 @@
 using GlobalLogAPI.Models.DB;
 using System.Net;
 using static GlobalLogAPI.Extensions.CommonResultAPI;
-
+using static GlobalLogAPI.Data.CBrand;
 namespace GlobalLogAPI.Data
 {
     public class DataBrand
     {
 
-        public static List<CBrand> OnLoad(string? sCode)
+        public static List<PageLoadBrand> OnLoad(string? sCode)
         {
             UUBillingEntity db = new UUBillingEntity();
-            List<CBrand> lstData = new List<CBrand>();
+            List<PageLoadBrand> lstData = new List<PageLoadBrand>();
 
             lstData = (from t1 in db.TBrand.Where(w => (w.IsDel ?? false) == false && (string.IsNullOrEmpty(sCode) || (w.SBRANDCODE.ToLower().Contains(sCode))))
-                       select new CBrand
+                       select new PageLoadBrand
                        {
                            sbrandcode = t1.SBRANDCODE,
                            Sbrandname = t1.SBRANDNAME,
