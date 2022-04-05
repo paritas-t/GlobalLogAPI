@@ -9,5 +9,7 @@ Log Global
 
 Status Codes [Informational](https://restfulapi.net/http-status-codes/)
 
+Status Codes [ภาษาไทย](https://tips.thaiware.com/1077.html)
+
 
 
