@@ -1,0 +1,117 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace GlobalLogAPI.Models.DB
+{
+    public partial class TReq_ServiceHis
+    {
+        public int nItem { get; set; }
+        public string sReq_ServiceID { get; set; } = null!;
+        public DateTime? DUPDATE { get; set; }
+        public string? SWWCODE { get; set; }
+        public string? SCUSTCODE { get; set; }
+        public int? sServiceType { get; set; }
+        public string? sAns1 { get; set; }
+        public DateTime? dAns21 { get; set; }
+        public DateTime? dAns22 { get; set; }
+        public string? sAns23 { get; set; }
+        public string? sAns3 { get; set; }
+        public decimal? sAns41 { get; set; }
+        public decimal? sAns42 { get; set; }
+        public string? sAns51 { get; set; }
+        public string? sAns52 { get; set; }
+        public decimal? sAns53 { get; set; }
+        public string? sAns54 { get; set; }
+        public int? sAns55 { get; set; }
+        public decimal? sAns56 { get; set; }
+        public string? sAns6 { get; set; }
+        public string? sAns7 { get; set; }
+        public string? sAns8 { get; set; }
+        public string? sAns91 { get; set; }
+        public string? sAns92 { get; set; }
+        public DateTime? sAns93 { get; set; }
+        public DateTime? sAns94 { get; set; }
+        public string? sAns95 { get; set; }
+        public string? sAns96 { get; set; }
+        public string? sAns97 { get; set; }
+        public string? sAns98 { get; set; }
+        public string? sAns101 { get; set; }
+        public string? sAns102 { get; set; }
+        public string? sAns103 { get; set; }
+        public string? sAns104 { get; set; }
+        public string? sAns105 { get; set; }
+        public string? sAns106 { get; set; }
+        public string? sAns111 { get; set; }
+        public string? sAns112 { get; set; }
+        public string? sAns113 { get; set; }
+        public string? sAns114 { get; set; }
+        public string? sAns12 { get; set; }
+        public string? sAns13 { get; set; }
+        public decimal? sAns141 { get; set; }
+        public decimal? sAns142 { get; set; }
+        public string? sAns151 { get; set; }
+        public string? sAns152 { get; set; }
+        public string? sAns153 { get; set; }
+        public string? sAns154 { get; set; }
+        public string? sAns155 { get; set; }
+        public DateTime? sAns156 { get; set; }
+        public string? sAns1_old { get; set; }
+        public DateTime? dAns21_old { get; set; }
+        public DateTime? dAns22_old { get; set; }
+        public string? sAns23_old { get; set; }
+        public string? sAns3_old { get; set; }
+        public decimal? sAns41_old { get; set; }
+        public decimal? sAns42_old { get; set; }
+        public string? sAns51_old { get; set; }
+        public string? sAns52_old { get; set; }
+        public decimal? sAns53_old { get; set; }
+        public string? sAns54_old { get; set; }
+        public int? sAns55_old { get; set; }
+        public decimal? sAns56_old { get; set; }
+        public string? sAns6_old { get; set; }
+        public string? sAns7_old { get; set; }
+        public string? sAns8_old { get; set; }
+        public string? sAns91_old { get; set; }
+        public string? sAns92_old { get; set; }
+        public DateTime? sAns93_old { get; set; }
+        public DateTime? sAns94_old { get; set; }
+        public string? sAns95_old { get; set; }
+        public string? sAns96_old { get; set; }
+        public string? sAns97_old { get; set; }
+        public string? sAns98_old { get; set; }
+        public string? sAns101_old { get; set; }
+        public string? sAns102_old { get; set; }
+        public string? sAns103_old { get; set; }
+        public string? sAns104_old { get; set; }
+        public string? sAns105_old { get; set; }
+        public string? sAns106_old { get; set; }
+        public string? sAns111_old { get; set; }
+        public string? sAns112_old { get; set; }
+        public string? sAns113_old { get; set; }
+        public string? sAns114_old { get; set; }
+        public string? sAns12_old { get; set; }
+        public string? sAns13_old { get; set; }
+        public decimal? sAns141_old { get; set; }
+        public decimal? sAns142_old { get; set; }
+        public string? sAns151_old { get; set; }
+        public string? sAns152_old { get; set; }
+        public string? sAns153_old { get; set; }
+        public string? sAns154_old { get; set; }
+        public string? sAns155_old { get; set; }
+        public DateTime? sAns156_old { get; set; }
+        public string? sAns181 { get; set; }
+        public string? sAns181_old { get; set; }
+        public string? sAns99 { get; set; }
+        public string? sAns910 { get; set; }
+        public string? sAns9USERTYPE { get; set; }
+        public string? sAns99_old { get; set; }
+        public string? sAns910_old { get; set; }
+        public string? sAns9USERTYPE_old { get; set; }
+        public string? sAns161 { get; set; }
+        public string? sAns161_old { get; set; }
+        public string? sAns10Village { get; set; }
+        public string? sAns10Village_old { get; set; }
+        public string? CCUSTSTART_old { get; set; }
+        public string? CCUSTSTART_new { get; set; }
+    }
+}

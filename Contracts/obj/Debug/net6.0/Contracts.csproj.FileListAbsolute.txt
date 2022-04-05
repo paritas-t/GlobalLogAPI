@@ -10,3 +10,15 @@ D:\ProjectSoftthai\2022\GlobalLogAPI\Contracts\obj\Debug\net6.0\Contracts.dll
 D:\ProjectSoftthai\2022\GlobalLogAPI\Contracts\obj\Debug\net6.0\refint\Contracts.dll
 D:\ProjectSoftthai\2022\GlobalLogAPI\Contracts\obj\Debug\net6.0\Contracts.pdb
 D:\ProjectSoftthai\2022\GlobalLogAPI\Contracts\obj\Debug\net6.0\ref\Contracts.dll
+D:\ProjectSoftthai\2022\1\GlobalLogAPI\Contracts\bin\Debug\net6.0\Contracts.deps.json
+D:\ProjectSoftthai\2022\1\GlobalLogAPI\Contracts\bin\Debug\net6.0\Contracts.dll
+D:\ProjectSoftthai\2022\1\GlobalLogAPI\Contracts\bin\Debug\net6.0\Contracts.pdb
+D:\ProjectSoftthai\2022\1\GlobalLogAPI\Contracts\obj\Debug\net6.0\Contracts.csproj.AssemblyReference.cache
+D:\ProjectSoftthai\2022\1\GlobalLogAPI\Contracts\obj\Debug\net6.0\Contracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectSoftthai\2022\1\GlobalLogAPI\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfoInputs.cache
+D:\ProjectSoftthai\2022\1\GlobalLogAPI\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfo.cs
+D:\ProjectSoftthai\2022\1\GlobalLogAPI\Contracts\obj\Debug\net6.0\Contracts.csproj.CoreCompileInputs.cache
+D:\ProjectSoftthai\2022\1\GlobalLogAPI\Contracts\obj\Debug\net6.0\Contracts.dll
+D:\ProjectSoftthai\2022\1\GlobalLogAPI\Contracts\obj\Debug\net6.0\refint\Contracts.dll
+D:\ProjectSoftthai\2022\1\GlobalLogAPI\Contracts\obj\Debug\net6.0\Contracts.pdb
+D:\ProjectSoftthai\2022\1\GlobalLogAPI\Contracts\obj\Debug\net6.0\ref\Contracts.dll
