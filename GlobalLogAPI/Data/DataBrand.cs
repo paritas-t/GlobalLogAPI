@@ -22,6 +22,7 @@ namespace GlobalLogAPI.Data
                            Scomment = (!string.IsNullOrEmpty(t1.SCOMMENT) ? t1.SCOMMENT : "-") ,
                            sUpdate = t1.DUPDATE != null ? t1.DUPDATE.Value.ToString("dd-MM-yyyy") : "",
                        }).ToList();
+
             return lstData;
         }
         public static ResultAPI OnSave(CBrandSave data)
@@ -31,11 +32,11 @@ namespace GlobalLogAPI.Data
 
             var IsDup = db.TBrand.Where(w => (w.SBRANDCODE == data.sbrandcode || w.SBRANDNAME.ToLower() == data.Sbrandname.Trims().ToLower()) && data.SMode == "C" &&
             (w.IsDel ?? false) == false).Any();
-            TBrand obj = db.TBrand.FirstOrDefault(f => f.SBRANDCODE.ToLower() == data.sbrandcode.Trims().ToLower() && f.IsDel == false);
+            TBrand obj = db.TBrand.FirstOrDefault(f => f.SBRANDCODE.ToLower() == data.sbrandcode.Trims().ToLower() && (f.IsDel ?? false) == false);
             if (IsDup)
             {
                 result.Message = ResultStatus.Duplicate;
-                result.Status = ResultStatus.Failed;
+                result.Status = HttpStatusCode.AlreadyReported + "";
             }
             else
             {
@@ -74,7 +75,7 @@ namespace GlobalLogAPI.Data
                 }
 
                 db.SaveChanges();
-                result.Status = ResultStatus.Success;
+                result.Status = HttpStatusCode.OK + "";
 
             }
             return result;
@@ -91,7 +92,7 @@ namespace GlobalLogAPI.Data
                 query.DUPDATE = dNow;
                 query.SUPDATEBY = 1;
                 db.SaveChanges();
-                result.Status = ResultStatus.Success;
+                result.Status = HttpStatusCode.OK + "";
             }
             return result;
         }
