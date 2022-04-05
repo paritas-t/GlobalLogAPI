@@ -8,12 +8,12 @@ namespace GlobalLogAPI.Data
     public class DataBrand
     {
 
-        public static List<PageLoadBrand> OnLoad(string? sCode)
+        public static ResultCBrand OnLoad(string? sCode)
         {
             UUBillingEntity db = new UUBillingEntity();
-            List<PageLoadBrand> lstData = new List<PageLoadBrand>();
+            ResultCBrand result = new ResultCBrand();
 
-            lstData = (from t1 in db.TBrand.Where(w => (w.IsDel ?? false) == false && (string.IsNullOrEmpty(sCode) || (w.SBRANDCODE.ToLower().Contains(sCode))))
+          var  lstData = (from t1 in db.TBrand.Where(w => (w.IsDel ?? false) == false && (string.IsNullOrEmpty(sCode) || (w.SBRANDCODE.ToLower().Contains(sCode))))
                        select new PageLoadBrand
                        {
                            sbrandcode = t1.SBRANDCODE,
@@ -22,8 +22,9 @@ namespace GlobalLogAPI.Data
                            Scomment = (!string.IsNullOrEmpty(t1.SCOMMENT) ? t1.SCOMMENT : "-") ,
                            sUpdate = t1.DUPDATE != null ? t1.DUPDATE.Value.ToString("dd-MM-yyyy") : "",
                        }).ToList();
-
-            return lstData;
+            result.lstData = lstData;
+            result.StatusCode = (int)HttpStatusCode.OK;
+            return result;
         }
         public static ResultAPI OnSave(CBrandSave data)
         {
@@ -36,7 +37,7 @@ namespace GlobalLogAPI.Data
             if (IsDup)
             {
                 result.Message = ResultStatus.Duplicate;
-                result.Status = HttpStatusCode.AlreadyReported + "";
+                result.StatusCode = (int)HttpStatusCode.AlreadyReported;
             }
             else
             {
@@ -75,7 +76,7 @@ namespace GlobalLogAPI.Data
                 }
 
                 db.SaveChanges();
-                result.Status = HttpStatusCode.OK + "";
+                result.StatusCode = (int)HttpStatusCode.OK;
 
             }
             return result;
@@ -92,7 +93,7 @@ namespace GlobalLogAPI.Data
                 query.DUPDATE = dNow;
                 query.SUPDATEBY = 1;
                 db.SaveChanges();
-                result.Status = HttpStatusCode.OK + "";
+                result.StatusCode = (int)HttpStatusCode.OK;
             }
             return result;
         }

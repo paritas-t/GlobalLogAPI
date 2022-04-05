@@ -1,8 +1,14 @@
-﻿namespace GlobalLogAPI.Data
+﻿using static GlobalLogAPI.Extensions.CommonResultAPI;
+
+namespace GlobalLogAPI.Data
 {
     public class CBrand
     {
-        public class PageLoadBrand 
+        public class ResultCBrand : ResultAPI
+        {
+            public List<PageLoadBrand> lstData { get; set; }
+        }
+        public class PageLoadBrand
         {
             /// <summary>
             /// รหัสยี่ห้อ
@@ -41,5 +47,5 @@
         }
 
     }
-   
+
 }

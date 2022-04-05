@@ -16,10 +16,11 @@ namespace GlobalLogAPI.Controllers
         /// <returns></returns>
         // GET: api/<BrandController>
         [HttpGet]
-        public IEnumerable<PageLoadBrand> Get()
+        public IActionResult Get()
         {
             var query = DataBrand.OnLoad("");
-            return query;
+            if (query.lstData.Count == 0) throw new KeyNotFoundException("Brand not found Try again");
+            return Ok(query);
         }
         /// <summary>
         /// ใช้ในการแสดงข้อมูลเฉพาะ sCode 1 รายการ
@@ -28,10 +29,11 @@ namespace GlobalLogAPI.Controllers
         /// <returns></returns>
         // GET api/<BrandController>/5
         [HttpGet("{sCode}")]
-        public IEnumerable<PageLoadBrand> Get(string sCode)
+        public IActionResult Get(string sCode)
         {
             var query = DataBrand.OnLoad(sCode);
-            return query;
+            if (query.lstData.Count == 0) throw new KeyNotFoundException("Brand not found Try again");
+            return Ok(query);
         }
         /// <summary>
         /// ใช้ในการ Save หรือ Edit
