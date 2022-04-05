@@ -2,6 +2,7 @@
 using GlobalLogAPI.Data;
 using static GlobalLogAPI.Extensions.CommonResultAPI;
 using static GlobalLogAPI.Data.CBrand;
+using System.Net;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace GlobalLogAPI.Controllers
@@ -42,10 +43,12 @@ namespace GlobalLogAPI.Controllers
         /// <returns></returns>
         // POST api/<BrandController>
         [HttpPost]
-        public ResultAPI Post([FromBody] CBrandSave value)
+        public IActionResult Post([FromBody] CBrandSave value)
         {
             var query = DataBrand.OnSave(value);
-            return query;
+            if (query.StatusCode == (int)HttpStatusCode.AlreadyReported) throw new AccessViolationException(ResultStatus.Duplicate);
+            else if (query.StatusCode == (int)HttpStatusCode.OK) throw new AccessViolationException(ResultStatus.Success);
+            return Ok(query);
         }
 
         // PUT api/<BrandController>/5
@@ -55,10 +58,10 @@ namespace GlobalLogAPI.Controllers
         /// <param name="value"></param>
         /// <returns></returns>
         [HttpPut]
-        public ResultAPI Put([FromBody] CBrandSave value)
+        public IActionResult Put([FromBody] CBrandSave value)
         {
             var query = DataBrand.OnSave(value);
-            return query;
+            return Ok(query);
         }
         /// <summary>
         /// 
@@ -67,10 +70,11 @@ namespace GlobalLogAPI.Controllers
         /// <returns></returns>
         // DELETE api/<BrandController>/5
         [HttpDelete("{sCode}")]
-        public ResultAPI Delete(string sCode)
+        public IActionResult Delete(string sCode)
         {
             var query = DataBrand.OnDelete(sCode);
-            return query;
+            if (query.StatusCode == (int)HttpStatusCode.NotFound) throw new KeyNotFoundException("Brand not found Try again");
+            return Ok(query);
         }
     }
 }

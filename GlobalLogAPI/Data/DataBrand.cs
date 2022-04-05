@@ -11,17 +11,18 @@ namespace GlobalLogAPI.Data
         public static ResultCBrand OnLoad(string? sCode)
         {
             UUBillingEntity db = new UUBillingEntity();
+
             ResultCBrand result = new ResultCBrand();
 
-          var  lstData = (from t1 in db.TBrand.Where(w => (w.IsDel ?? false) == false && (string.IsNullOrEmpty(sCode) || (w.SBRANDCODE.ToLower().Contains(sCode))))
-                       select new PageLoadBrand
-                       {
-                           sbrandcode = t1.SBRANDCODE,
-                           Sbrandname = t1.SBRANDNAME,
-                           Cstatus = t1.CSTATUS == "1" ? "Active" : "InActive",
-                           Scomment = (!string.IsNullOrEmpty(t1.SCOMMENT) ? t1.SCOMMENT : "-") ,
-                           sUpdate = t1.DUPDATE != null ? t1.DUPDATE.Value.ToString("dd-MM-yyyy") : "",
-                       }).ToList();
+            var lstData = (from t1 in db.TBrand.Where(w => (w.IsDel ?? false) == false && (string.IsNullOrEmpty(sCode) || (w.SBRANDCODE.ToLower().Contains(sCode))))
+                           select new PageLoadBrand
+                           {
+                               sbrandcode = t1.SBRANDCODE,
+                               Sbrandname = t1.SBRANDNAME,
+                               Cstatus = t1.CSTATUS == "1" ? "Active" : "InActive",
+                               Scomment = (!string.IsNullOrEmpty(t1.SCOMMENT) ? t1.SCOMMENT : "-"),
+                               sUpdate = t1.DUPDATE != null ? t1.DUPDATE.Value.ToString("dd-MM-yyyy") : "",
+                           }).ToList();
             result.lstData = lstData;
             result.StatusCode = (int)HttpStatusCode.OK;
             return result;
@@ -60,14 +61,14 @@ namespace GlobalLogAPI.Data
                     if (obj == null)
                     {
                         obj = new TBrand();
-                        obj.SBRANDCODE = data.sbrandcode.Trims();
+                        obj.SBRANDCODE = data.sbrandcode;
                         obj.DADD = dNow;
                         obj.SADDBY = 1;
                         obj.IsDel = false;
 
                         db.TBrand.Add(obj);
                     }
-                    obj.SBRANDNAME = data.sbrandcode.Trims();
+                    obj.SBRANDNAME = data.Sbrandname.Trims();
                     obj.CSTATUS = data.Cstatus == "Y" ? "1" : "0";
                     obj.SCOMMENT = data.Scomment;
                     obj.SUPDATEBY = 1;
@@ -94,9 +95,13 @@ namespace GlobalLogAPI.Data
                 query.SUPDATEBY = 1;
                 db.SaveChanges();
                 result.StatusCode = (int)HttpStatusCode.OK;
+                result.Message = ResultMessage.DelSuccess;
+            }
+            else {
+                result.StatusCode = (int)HttpStatusCode.NotFound;
             }
             return result;
         }
-      
+
     }
 }

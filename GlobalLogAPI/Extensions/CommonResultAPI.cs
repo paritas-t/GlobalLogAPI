@@ -14,5 +14,10 @@
             public const string Success = "Success";
             public const string Failed = "Failed";
         }
+        public class ResultMessage
+        {
+            public const string SaveSuccess = "Data Save Success";
+            public const string DelSuccess = "Data Delete Success";
+        }
     }
 }

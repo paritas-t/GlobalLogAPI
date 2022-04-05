@@ -40,37 +40,55 @@ namespace GlobalLogAPI
             context.Response.ContentType = "application/json";
             var response = context.Response;
             UUBillingEntity db = new UUBillingEntity();
-            var errorResponse = new ErrorDetails
-            {
-                StatusCode = (int)HttpStatusCode.InternalServerError
-            };
+            var errorResponse = new ErrorDetails();
 
             switch (error)
             {
                 case ApplicationException ex:
                     if (ex.Message.Contains("Invalid token"))
                     {
-                        response.StatusCode = (int)HttpStatusCode.Forbidden;
+                        errorResponse.StatusCode = (int)HttpStatusCode.Forbidden;
                         errorResponse.Message = ex.Message;
                         break;
                     }
-                    response.StatusCode = (int)HttpStatusCode.BadRequest;
-                    errorResponse.Message = ex.Message;
-                break;
-                //ไม่เจอข้อมูล
-                case KeyNotFoundException ex:
-                    response.StatusCode = (int)HttpStatusCode.NotFound;
+                    errorResponse.StatusCode = (int)HttpStatusCode.BadRequest;
                     errorResponse.Message = ex.Message;
                     break;
-
+                //ไม่เจอข้อมูล
+                case KeyNotFoundException ex:
+                    errorResponse.StatusCode = (int)HttpStatusCode.NotFound;
+                    errorResponse.Message = ex.Message;
+                    break;
+                case AccessViolationException e:
+                    //Test Case Error
+                    if (e.Message.Contains(ResultStatus.Duplicate))
+                    {
+                        errorResponse.StatusCode = (int)HttpStatusCode.AlreadyReported;
+                        errorResponse.Message = e.Message;
+                    }
+                    else if (e.Message.Contains(ResultStatus.Success))
+                    {
+                        errorResponse.StatusCode = (int)HttpStatusCode.OK;
+                        errorResponse.Message = "OK This is Error Exception";
+                    }
+                    break;
                 default:
-                    response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                    errorResponse.StatusCode = (int)HttpStatusCode.InternalServerError;
                     errorResponse.Message = "Internal Server Error Check Log";
                     break;
             }
             _logger.LogError(error.Message);
             var result = JsonSerializer.Serialize(errorResponse);
-           
+
+            #region Save To DB
+            LogGlobalError logGlobalError = new LogGlobalError();
+            logGlobalError.sErrorsMessage = error.Message;
+            logGlobalError.sStackTrace = error.StackTrace;
+            logGlobalError.dCreate = DateTime.Now;
+            logGlobalError.sCreateBy = 1;
+            db.LogGlobalError.Add(logGlobalError);
+            db.SaveChanges();
+            #endregion
 
             await context.Response.WriteAsync(result);
 
