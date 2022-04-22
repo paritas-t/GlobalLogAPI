@@ -1,6 +1,7 @@
-# GlobalLogAPI
+# GlobalLogAPI ใช้สำหรับเก็บการ Set Log Global ทั้ง Site
 Log Global
 [อ่านเพิ่มเติม](https://code-maze.com/global-error-handling-aspnetcore/)
+
 [อ่านเพิ่มเติม 2](https://www.infoworld.com/article/3625494/how-to-use-http-logging-in-aspnet-core-6.html)
 ### Nuget package Install
 1. "Microsoft.EntityFrameworkCore.Design": "6.0.3" 
@@ -9,6 +10,7 @@ Log Global
 4. .NLog.Extensions.Logging" : "1.7.4"
 
 Status Codes [Informational](https://restfulapi.net/http-status-codes/)
+
 Status Codes [ภาษาไทย](https://tips.thaiware.com/1077.html)
 
 
