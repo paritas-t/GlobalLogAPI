@@ -37,7 +37,7 @@ app.UseCors(x => x
 
 ////Log Error Global
 //app.UseMiddleware<ExceptionMiddleware>();
-// global error handler
+// global error handler 
 app.UseMiddleware<ErrorHandlerMiddleware>();
 
 app.UseHttpsRedirection();

@@ -8,6 +8,9 @@ using static GlobalLogAPI.Extensions.CommonResultAPI;
 
 namespace GlobalLogAPI
 {
+    /// <summary>
+    /// ใช้กำหนดไฟล์ Log Gobal 
+    /// </summary>
     public class ErrorHandlerMiddleware
     {
         private readonly RequestDelegate _next;
