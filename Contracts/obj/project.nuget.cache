@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1Mq2nt3BOMMNhY1joTQY91U+eZvQn9MB3hR7mUe7PR1vqhn8Vul7LMyRdqzOkSvCXDDDiiayFCEuHltJ9kyekw==",
+  "dgSpecHash": "sw9AOEzBQyyaLi3CWLCJHGU5eHJtslzRcYuO5Uc+A9+wQP6GV6blfXkgCmWis17QVw+hoV51nkmVKwqZDh8zXg==",
   "success": true,
-  "projectFilePath": "D:\\ProjectSoftthai\\2022\\Log\\GlobalLogAPI\\Contracts\\Contracts.csproj",
+  "projectFilePath": "D:\\ProjectSoftthai\\2022\\DocGlobalLogAPI\\GlobalLogAPI\\Contracts\\Contracts.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thana\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\thana\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",

@@ -47,6 +47,7 @@ namespace GlobalLogAPI.Controllers
         {
             var query = DataBrand.OnSave(value);
             if (query.StatusCode == (int)HttpStatusCode.AlreadyReported) throw new AccessViolationException(ResultStatus.Duplicate);
+            //เพื่อกำหนด Message ที่จะ Return กลับไป
             else if (query.StatusCode == (int)HttpStatusCode.OK) throw new AccessViolationException(ResultStatus.Success);
             return Ok(query);
         }
