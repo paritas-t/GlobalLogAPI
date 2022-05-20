@@ -13,8 +13,8 @@ namespace GlobalLogAPI.Data
             UUBillingEntity db = new UUBillingEntity();
 
             ResultCBrand result = new ResultCBrand();
-
-            var lstData = (from t1 in db.TBrand.Where(w => (w.IsDel ?? false) == false && (string.IsNullOrEmpty(sCode) || (w.SBRANDCODE.ToLower().Contains(sCode))))
+            //w.SBRANDCODE == "99" &&
+            var lstData = (from t1 in db.TBrand.Where(w =>  (w.IsDel ?? false) == false && (string.IsNullOrEmpty(sCode) || (w.SBRANDCODE.ToLower().Contains(sCode))))
                            select new PageLoadBrand
                            {
                                sbrandcode = t1.SBRANDCODE,

@@ -77,5 +77,16 @@ namespace GlobalLogAPI.Controllers
             if (query.StatusCode == (int)HttpStatusCode.NotFound) throw new KeyNotFoundException("Brand not found Try again");
             return Ok(query);
         }
+        /// <summary>
+        /// ทดสอบการส่ง Path รายการ
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        [HttpPatch]
+        public IActionResult Patch([FromBody] CBrandSave value)
+        {
+            var query = DataBrand.OnSave(value);
+            return Ok(query);
+        }
     }
 }
