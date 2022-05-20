@@ -13,12 +13,6 @@ Status Codes [Informational](https://restfulapi.net/http-status-codes/)
 
 Status Codes [ภาษาไทย](https://tips.thaiware.com/1077.html)
 
-ASP.NET Core Web API – Logging With NLog
-
-Global Error Handling in ASP.NET Core Web API
-
-Implementing Action Filters in ASP.NET Core
-
 ASP.NET Core Web API – Logging With NLog [Informational](https://code-maze.com/net-core-web-development-part3/)
 
 Global Error Handling in ASP.NET Core Web API [Informational](https://code-maze.com/global-error-handling-aspnetcore/)
